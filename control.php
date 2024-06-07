@@ -115,7 +115,7 @@
                   </div>
                 </div> -->
 
-                <div class="col s12 m4 l3">
+                <!-- <div class="col s12 m4 l3">
                   <div class="card cardControl5 card-4" id="updatePicture">
                     <div class="col s8">
                       <div class="cardName">
@@ -123,7 +123,7 @@
                       </div>  
                     </div>
                   </div>
-                </div>
+                </div> -->
                 <?php
               }
 
