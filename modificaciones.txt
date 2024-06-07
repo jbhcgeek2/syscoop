@@ -1,0 +1,57 @@
+08-4-2024
+--se inserta campo de fotro de perfil en tabla de usuarios
+ALTER TABLE `empleados` ADD `imgPerfil` VARCHAR(150) NULL AFTER `activo`;
+
+
+
+02-04-2024
+--Se registra los colores para los estatus de los tickets
+ALTER TABLE `estatus_ticket` ADD `colorStatus` VARCHAR(25) NOT NULL AFTER 
+`descripcionEstatusTicket`;
+
+
+15-02-2024
+--se registyra la tabla de tickets
+CREATE TABLE `tickets` (`id_ticket` INT NOT NULL AUTO_INCREMENT , 
+`fecha_registro_ticket` DATE NOT NULL , `estatus_ticket` VARCHAR(20) NOT NULL , 
+`estatus2_ticket` VARCHAR(20) NULL , `usuario_registra_ticket_id` INT NOT NULL , 
+`descripcion_ticket` VARCHAR(300) NOT NULL , `prioridad_ticket` VARCHAR(20) NOT NULL , 
+`fecha_actualiza_ticket` DATE NULL , `usuario_seguimiento_ticket_id` INT NULL , 
+`tipo_ticket_id` INT NOT NULL , `hora_registro_ticket` TIME NOT NULL , 
+`fecha_termino_ticket` DATE NULL , `hora_termino_ticket` TIME NULL , 
+`hora_actualiza_ticket` TIME NOT NULL , PRIMARY KEY (`id_ticket`)) 
+ENGINE = InnoDB CHARSET=utf8mb3 COLLATE utf8mb3_spanish_ci;
+
+ALTER TABLE `tickets` ADD `campos_tipo_ticket` TEXT NOT NULL AFTER 
+`hora_actualiza_ticket`;
+
+
+13-02-2024
+--Se agregan permsis para registrar manuales, ver actas y registrar actas
+ALTER TABLE `permisos` ADD `agregar_manuales` INT NULL AFTER `ver_manuales`, 
+ADD `ver_actas` INT NULL AFTER `agregar_manuales`, ADD `agregar_acas` 
+INT NULL AFTER `ver_actas`;
+
+----
+Si tiene activo los permisos de ver_manuales
+es por que podra ver todos los manuales indiferentemente si son de su 
+area o no, en cambio si no o tiene activado solo podra ver los manuales
+que correpondan de su area
+
+
+09-02-2024
+
+CREATE TABLE tipoTickets (`idTipoTicket` INT NOT NULL AUTO_INCREMENT , 
+`nombreTicket` VARCHAR(70) NOT NULL , `responsableTicket` INT NOT NULL , 
+`diasAtencion` INT NOT NULL , `ticketActivo` INT NOT NULL COMMENT '1=activo - 0=baja' , 
+`camposTicket` TEXT NOT NULL , `solicitaTicket` INT NOT NULL , 
+PRIMARY KEY (`idTipoTicket`)) ENGINE = InnoDB CHARSET=utf8mb3 COLLATE utf8mb3_spanish_ci;
+
+
+31-01-2024
+
+ALTER TABLE permisos ADD ver_manuales INT NOT NULL AFTER auditar_inventario;
+
+25-01-2024
+
+ALTER TABLE factura_inventario ADD suspender INT NULL AFTER imagen_id;

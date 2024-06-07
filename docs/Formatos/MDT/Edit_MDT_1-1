@@ -1,0 +1,6 @@
+set year=%date:~6,4%
+set month=%date:~3,2%
+set day=%date:~0,2%
+set nombre=respaldo_%year%%month%%day%.sql
+
+mysqldump -u root -pCST666960131TiCS control_ct > C:\tmp\%nombre%

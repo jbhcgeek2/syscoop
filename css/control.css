@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+    margin-bottom: -15px;
+    padding-left: 300px;
+    max-width: 100vw;
+}
+
+
+@media screen and (max-width: 993px){
+    main {
+        padding-left: 0px;
+    }
+}
