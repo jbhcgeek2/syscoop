@@ -14,11 +14,18 @@ function buscaUsuario(valor){
       let response = envio.responseText;
       if(response.split("DataError|").length == 1){
         if(response == "NoResult"){
-          Swal.fire(
-            'Sin Resultados',
-            'Verifica que el dato este correctamente escrito',
-            'warning'
-          )
+          // Swal.fire(
+          //   'Sin Resultados',
+          //   'Verifica que el dato este correctamente escrito',
+          //   'warning'
+          // )
+          //generamos una tabla en vez del swal
+          let tablaNueva = `
+          <tr>
+            <td colspan="4">No hay resultados</td>
+          </tr>
+          `;
+          document.getElementById("resultUser").innerHTML = tablaNueva;
         }else{
           let datos = JSON.parse(response);
           console.log(datos.length);
