@@ -24,6 +24,9 @@
           $query = mysqli_query($conexion, $sql);
           $fetch = mysqli_fetch_assoc($query);
           $imgPerfil = "img/imgPerfilDefaut.jpg";
+          $nombres = $fetch['nombre'];
+          $paterno = $fetch['paterno'];
+          $materno = $fetch['materno'];
           $nombreCompleto = mb_strtoupper($fetch['nombre'])." ".mb_strtoupper($fetch['paterno'])." ".mb_strtoupper($fetch['materno']);
         //   $usuarioPer = $fetch['nombre_usuario'];
           $correoPer = $fetch['correo'];
@@ -62,10 +65,21 @@
 
                 <div class="col s12 m8 l9">
 
-                  <div class="input-field col s12 m8">
-                    <input type="text" id="nombreEmpleado" value="<?php echo $nombreCompleto; ?>">
-                    <label for="nombreEmpleado">Nombre Empleado</label>
+                  <div class="input-fiel col s12 m4">
+                    <input type="text" name="nombreEmpleado" id="nombreEmpleado" value="<?php echo $nombres; ?>">
+                    <label for="nombreEmpleado">Nombres</label>
                   </div>
+
+                  <div class="input-field col s12 m4">
+                    <input type="text" name="paternoEmpleado" id="paternoEmpleado" value="<?php echo $paterno; ?>">
+                    <label for="paternoEmpleado">Apellido Paterno</label>
+                  </div>
+
+                  <div class="input-field col s12 m4">
+                    <input type="text" name="maternoEmpleado" id="maternoEmpleado" value="<?php echo $materno; ?>">
+                    <label for="maternoEmpleado">Apellido Materno</label>
+                  </div>
+
                   <div class="input-field col s12 m4">
                     <select name="activo" id="activo" onchange="updateCampo(this.id)">
                       <option value="" disabled>Seleccione</option>
