@@ -88,8 +88,25 @@
                     <input type="text" id="celUser" value="<?php echo $celular; ?>" onchange="updateCampo(this.id)">
                     <label for="celUser">Celular</label>
                   </div>
+                  <div class="input-field col s12 m3">
+                    <select name="activo" id="activo">
+                      <option value="" disabled>Seleccione</option>
+                      <?php 
+                        if($activo == "1"){
+                          echo '<option value="1" selected disabled>Activo</option>
+                          <option value="0">Baja</option>';
+                        }else{
+                          echo '<option value="1">Activo</option>
+                          <option value="0" selected disabled>Baja</option>';
+                        }
+                      ?>
+                      
+                    </select>
+                    <label for="activo">Estatus</label>
+                  </div>
+
                   <div class="input-field col s12 m6">
-                    <select name="" id="departamento" onchange="updateCampo(this.id)">
+                    <select name="departamento" id="departamento" onchange="updateCampo(this.id)">
                       <?php
                         //consultamos los departamentos dados de alta
                         $sqlDep = "SELECT * FROM departamentos WHERE id_departamento > 1 ORDER BY nombre_departamento ASC";
@@ -114,7 +131,7 @@
                     <label for="departamento">Departamento</label>
                   </div>
                   <div class="input-field col s12 m6">
-                    <select name="puesto" id="puesto"  onchange="updateCampo(this.id)">
+                    <select name="puesto" id="puesto">
                       <option value="" selected>Seleccione...</option>
                       <?php
                         //consultamos el puesto del vato 
@@ -138,22 +155,7 @@
                     <label for="puesto">Cargo</label>
                   </div>
 
-                  <div class="input-field col s12 m4">
-                    <select name="activo" id="activo" onchange="updateCampo(this.id)">
-                      <option value="" disabled>Seleccione</option>
-                      <?php 
-                        if($activo == "1"){
-                          echo '<option value="1" selected disabled>Activo</option>
-                          <option value="0">Baja</option>';
-                        }else{
-                          echo '<option value="1">Activo</option>
-                          <option value="0" selected disabled>Baja</option>';
-                        }
-                      ?>
-                      
-                    </select>
-                    <label for="activo">Estatus</label>
-                  </div>
+                  
                   
 
                 </div>
