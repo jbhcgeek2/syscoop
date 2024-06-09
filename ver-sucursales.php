@@ -27,35 +27,44 @@
             <div class="row">
 
               <div class="col s12 m12 l10 offset-l1" style="">
-                
-                    <?php 
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Nombre</th>
+                      <th>Estatus</th>
+                      <th>Editar</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <?php 
                     $sqlSuc = "SELECT * FROM sucursales ORDER BY nombre_sucursal ASC";
                     $querySuc = mysqli_query($conexion, $sqlSuc);
                     if($querySuc){
                       while($fetchSuc = mysqli_fetch_assoc($querySuc)){
                         $nombreSuc = $fetchSuc['nombre_sucursal'];
                         if($fetchSuc['sucursal_activa'] == 0){
-                            $classCard = "redGradient";
+                            $classCard = "Activa";
                         }else{
-                            $classCard = "blueGradient";
+                            $classCard = "Baja";
                         }
                         ?>
-                        <div class="col s12 m4 l3">
-                            <div class="card <?php echo $classCard; ?> cardControl">
-                                <div class="iconCard">
-                                <img src="../img/registroUbica.png" alt="" width="100%">
-                                </div>
-                                <div class="cardName">
-                                <?php echo $nombreSuc; ?>
-                                </div>
-                            </div>
-                        </div>
+                        
+                        <tr>
+                          <td><?php echo $nombreSuc; ?></td>
+                          <td><?php echo $classCard; ?></td>
+                          <td>
+                            <a href='#!' class="btn">Editar</a>
+                          </td>
+                        </tr>
                         <?php
                       }
                     }else{
 
                     }
                     ?>
+                  </tbody>
+                </table>
+                    
               </div>
 
             </div><!--FIN row principal del card-->
