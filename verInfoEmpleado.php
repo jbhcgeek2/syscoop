@@ -155,7 +155,7 @@
                     <label for="puesto">Cargo</label>
                   </div>
 
-                  <div class="col s12 text-center">
+                  <div class="col s12" style="text-align: center;">
                     <a href="#!" id="btnUpdateDataEmp" class="btn waves-effect btnBlueNormal">Actualizar Informacion</a>
                   </div>
 
