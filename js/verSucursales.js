@@ -44,7 +44,7 @@ btnUpdateSuc.addEventListener('click', function(){
         envio.send(datos);
         
         if(envio.status == 200){
-            let response = JSON.parfse(envio.responseText);
+            let response = JSON.parse(envio.responseText);
             if(response.status == 'ok'){
                 //hubo todo bien
                 Swal.fire(
