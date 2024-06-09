@@ -53,7 +53,7 @@
                           <td><?php echo $nombreSuc; ?></td>
                           <td><?php echo $classCard; ?></td>
                           <td>
-                            <a href='#!' class="btn">Editar</a>
+                            <a href='#!' class="btn waves waves-effect btnBlueNormal">Editar</a>
                           </td>
                         </tr>
                         <?php
