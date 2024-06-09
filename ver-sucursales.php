@@ -42,18 +42,21 @@
                     if($querySuc){
                       while($fetchSuc = mysqli_fetch_assoc($querySuc)){
                         $nombreSuc = $fetchSuc['nombre_sucursal'];
+                        $idSuc = $fetchSuc['id_sucursal'];
                         if($fetchSuc['sucursal_activa'] == 0){
                             $classCard = "Activa";
                         }else{
                             $classCard = "Baja";
                         }
+                        $cadena = $idSuc."|".$nombreSuc."|".$classCard;
                         ?>
                         
                         <tr>
                           <td><?php echo $nombreSuc; ?></td>
                           <td><?php echo $classCard; ?></td>
                           <td>
-                            <a href='#!' class="btn waves waves-effect btnBlueNormal">Editar</a>
+                            <a href='#!' class="btn waves waves-effect btnGrenNormal"
+                            id="editSuc|<?php echo $cadena; ?>" onclick="editSuc(this.id)">Editar</a>
                           </td>
                         </tr>
                         <?php
@@ -119,6 +122,7 @@
   <!-- <script src="js/start.js"></script> -->
   <script src="js/sweetAlert2.min.js"></script>
   <script src="js/vercontroles.js"></script>
+  <script src="js/verSucursales.js"></script>
   <!-- <script src="js/login.js"></script> -->
   <?php
 }else{
