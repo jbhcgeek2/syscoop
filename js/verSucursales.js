@@ -23,3 +23,59 @@ function editSuc(sucData){
 
     M.updateTextFields();
 }
+
+let btnUpdateSuc = document.getElementById('sendUpdate');
+btnUpdateSuc.addEventListener('click', function(){
+    // metodo para actualizar el nombre y estatus de una sucursal
+
+    let newNameSuc = document.getElementById('nameSucEdit').value;
+    let newStatusSuc = document.getElementById('estatusSucEdit').value;
+    let dataSuc = document.getElementById('dataSucEdit').value;
+
+    if(newNameSuc != "" && newStatusSuc != "" && dataSuc != ""){
+        //generamos el formData
+        let datos = new FormData();
+        datos.append("newNameSuc",newNameSuc);
+        datos.append("newStatusSuc",newStatusSuc);
+        datos.append("dataSuc",dataSuc);
+
+        let envio = new XMLHttpRequest();
+        envio.open('POST','../includes/operations/sucursales.php',false);
+        envio.send(datos);
+        
+        if(envio.status == 200){
+            let response = JSON.parfse(envio.responseText);
+            if(response.status == 'ok'){
+                //hubo todo bien
+                Swal.fire(
+                    'Sucursal Actualizada',
+                    'Se actualizo la sucursal correctamente.',
+                    'success'
+                ).then(function(){
+                    location.reload();
+                })
+            }else{
+                //hubo un error
+                Swal.fire(
+                    'Ha ocurrido un Error',
+                    response.mensaje,
+                    'error'
+                )
+            }
+        }else{
+            //servidor inalcansable
+            Swal.fire(
+                'Error',
+                'Servidor inalcanzable',
+                'error'
+            )
+        }
+    }else{
+        //campos incompletos
+        Swal.fire(
+            'Campos invalidos',
+            'Asegurate de capturar los campos correctamente',
+            'error'
+        )
+    }
+})
