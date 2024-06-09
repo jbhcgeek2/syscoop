@@ -73,21 +73,24 @@ function updatePermiso(permiso){
   })
 }
 
-let btnShowP = document.getElementById("btnShowPass");
-btnShowP.addEventListener("click", function(){
-  //simplemente habilitamos la vista
-  console.log(btnShowP);
-  let campo = document.getElementById("contentCon");
-  if(campo.classList.contains("hide")){
-    //la quitamos
-    campo.classList.remove("hide");
-    document.getElementById("btnShowPass").innerHTML = "Ocultar Contrasena";
-  }else{
-    campo.classList.add("hide");
-    document.getElementById("btnShowPass").innerHTML = "Ver Contraseña";
-  }
-  // document.getElementById("contentCon").classList.remove("hide");
-})
+if(document.getElementById("btnShowPass")){
+  let btnShowP = document.getElementById("btnShowPass");
+  btnShowP.addEventListener("click", function(){
+    //simplemente habilitamos la vista
+    console.log(btnShowP);
+    let campo = document.getElementById("contentCon");
+    if(campo.classList.contains("hide")){
+      //la quitamos
+      campo.classList.remove("hide");
+      document.getElementById("btnShowPass").innerHTML = "Ocultar Contrasena";
+    }else{
+      campo.classList.add("hide");
+      document.getElementById("btnShowPass").innerHTML = "Ver Contraseña";
+    }
+    // document.getElementById("contentCon").classList.remove("hide");
+  })
+}
+
 
 function updateCampo(campo){
   //verificamos el campo
