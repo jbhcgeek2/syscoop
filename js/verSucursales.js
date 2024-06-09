@@ -1,9 +1,9 @@
 function editSuc(sucData){
     console.log(sucData);
     let auxData = sucData.split("|");
-    let idSuc = auxData[0];
-    let nombreSuc = auxData[1];
-    let estatusSuc = auxData[2];
+    let idSuc = auxData[1];
+    let nombreSuc = auxData[2];
+    let estatusSuc = auxData[3];
 
     //ahora mandamos llamar al modal de editar
 
