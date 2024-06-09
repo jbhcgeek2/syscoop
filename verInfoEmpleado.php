@@ -181,13 +181,20 @@
                                 $nombreUsuario = $fetchU['nombre_usuario'];
                                 $fechaCreacion = $fetchU['fecha_creacion'];
                                 $estatusU = $fetchU['usuario_activo'];
+                                $idUserU = $fetchU['id_usuario'];
+
+                                if($estatusU == "1"){
+                                    $estatusUser = "Activo";
+                                }else{
+                                    $estatusUser = "Baja";
+                                }
 
                                 echo "<tr>
                                     <td>$nombreUsuario</td>
-                                    <td>$estatusU</td>
+                                    <td>$estatusUser</td>
                                     <td>$fechaCreacion</td>
                                     <td>
-                                        <a href='' class='btn waves-effect btnGrenNormal'>Ver</a>
+                                        <a href='verInfoUsuario.php?dataSet=$idUserU' class='btn waves-effect btnGrenNormal'>Ver</a>
                                     </td>
                                 </tr>";
                             }//fion del while
