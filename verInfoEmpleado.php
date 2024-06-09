@@ -24,6 +24,13 @@
           $query = mysqli_query($conexion, $sql);
           $fetch = mysqli_fetch_assoc($query);
           $imgPerfil = "img/imgPerfilDefaut.jpg";
+          $imagenU = $fetchU['imgPerfil'];
+          if(empty($imagenU)){
+            $imgPerfil = "img/imgPerfilDefaut.jpg";
+          }else{
+            $imgPerfil = $imagenU;
+          }
+          //)
           $nombres = $fetch['nombre'];
           $paterno = $fetch['paterno'];
           $materno = $fetch['materno'];
@@ -85,7 +92,7 @@
                     <label for="mailUser">Correo</label>
                   </div>
                   <div class="input-field col s12 m3">
-                    <input type="text" id="celUser" value="<?php echo $celular; ?>" onchange="updateCampo(this.id)">
+                    <input type="text" id="celUser" value="<?php echo $celular; ?>">
                     <label for="celUser">Celular</label>
                   </div>
                   <div class="input-field col s12 m3">
@@ -106,7 +113,7 @@
                   </div>
 
                   <div class="input-field col s12 m6">
-                    <select name="departamento" id="departamento" onchange="updateCampo(this.id)">
+                    <select name="departamento" id="departamento">
                       <?php
                         //consultamos los departamentos dados de alta
                         $sqlDep = "SELECT * FROM departamentos WHERE id_departamento > 1 ORDER BY nombre_departamento ASC";
