@@ -80,23 +80,6 @@
                     <label for="maternoEmpleado">Apellido Materno</label>
                   </div>
 
-                  <div class="input-field col s12 m4">
-                    <select name="activo" id="activo" onchange="updateCampo(this.id)">
-                      <option value="" disabled>Seleccione</option>
-                      <?php 
-                        if($activo == "1"){
-                          echo '<option value="1" selected disabled>Activo</option>
-                          <option value="0">Baja</option>';
-                        }else{
-                          echo '<option value="1">Activo</option>
-                          <option value="0" selected disabled>Baja</option>';
-                        }
-                      ?>
-                      
-                    </select>
-                    <label for="activo">Estatus</label>
-                  </div>
-                  
                   <div class="input-field col s12 m6">
                     <input type="text" id="mailUser" value="<?php echo $correoPer; ?>">
                     <label for="mailUser">Correo</label>
@@ -153,6 +136,23 @@
                       ?>
                     </select>
                     <label for="puesto">Cargo</label>
+                  </div>
+
+                  <div class="input-field col s12 m4">
+                    <select name="activo" id="activo" onchange="updateCampo(this.id)">
+                      <option value="" disabled>Seleccione</option>
+                      <?php 
+                        if($activo == "1"){
+                          echo '<option value="1" selected disabled>Activo</option>
+                          <option value="0">Baja</option>';
+                        }else{
+                          echo '<option value="1">Activo</option>
+                          <option value="0" selected disabled>Baja</option>';
+                        }
+                      ?>
+                      
+                    </select>
+                    <label for="activo">Estatus</label>
                   </div>
                   
 
