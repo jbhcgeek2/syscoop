@@ -87,8 +87,8 @@ if(!empty($_SESSION['usNamePlataform'])){
     
     //verificamos que los campos esten capturados
     if(!empty($nombreUpdate) || !empty($paternoUpdate) || !empty($maternoUpdate) ||
-      !empty($correoUpdate) || !empty($celularUpdate) || !empty($departamentoUpdate) 
-      || !empty($activoUpdate)){
+      !empty($correoUpdate) || !empty($celularUpdate) || !empty($departamentoUpdate) ||
+      !empty($activoUpdate)){
       //procedemos a actualizar los datos del usuario
       $sql = "UPDATE empleados SET nombre = '$nombreUpdate', paterno = '$paternoUpdate',
       materno = '$maternoUpdate', correo = '$correoUpdate', celular = '$celularUpdate',
