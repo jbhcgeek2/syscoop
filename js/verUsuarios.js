@@ -21,8 +21,8 @@ function buscaUsuario(valor){
           // )
           //generamos una tabla en vez del swal
           let tablaNueva = `
-          <tr>
-            <td colspan="4">No hay resultados</td>
+          <tr style="text-align:center;">
+            <td colspan="4" style="text-align:center">No hay resultados</td>
           </tr>
           `;
           document.getElementById("resultUser").innerHTML = tablaNueva;
