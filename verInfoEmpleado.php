@@ -448,7 +448,7 @@
   <script src="js/init.js"></script>
   <!-- <script src="js/start.js"></script> -->
   <script src="js/sweetAlert2.min.js"></script>
-  <script src="js/verInfoUsuario.js"></script>
+  <!-- <script src="js/verInfoUsuario.js"></script> -->
   <script src="js/verInfoEmpleado.js"></script>
   <!-- <script src="js/login.js"></script> -->
   <?php
