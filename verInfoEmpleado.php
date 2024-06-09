@@ -65,7 +65,7 @@
 
                 <div class="col s12 m8 l9">
 
-                  <div class="input-fiel col s12 m4">
+                  <div class="input-field col s12 m4">
                     <input type="text" name="nombreEmpleado" id="nombreEmpleado" value="<?php echo $nombres; ?>">
                     <label for="nombreEmpleado">Nombres</label>
                   </div>
