@@ -162,48 +162,51 @@
           <div class="titulo">Usuarios Asignados</div>
           <div class="card-content">
             <div class="row">
-                <table class="striped">
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Estatus</th>
-                            <th>Fecha Creacion</th>
-                            <th>Ver</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <?php
-                        //consultamos los usuarios que tenga activos
-                        $sqlU = "SELECT * FROM usuarios WHERE empleado_id = '$idEmpleadoUser'";
-                        $queryU = mysqli_query($conexion, $sqlU);
-                        if(mysqli_num_rows($queryU) > 0){
-                            while($fetchU = mysqli_fetch_assoc($queryU)){
-                                $nombreUsuario = $fetchU['nombre_usuario'];
-                                $fechaCreacion = $fetchU['fecha_creacion'];
-                                $estatusU = $fetchU['usuario_activo'];
-                                $idUserU = $fetchU['id_usuario'];
+                <div class="col s12 m12 l10 offset-l1">
+                    <table class="striped">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Estatus</th>
+                                <th>Fecha Creacion</th>
+                                <th>Ver</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                            //consultamos los usuarios que tenga activos
+                            $sqlU = "SELECT * FROM usuarios WHERE empleado_id = '$idEmpleadoUser'";
+                            $queryU = mysqli_query($conexion, $sqlU);
+                            if(mysqli_num_rows($queryU) > 0){
+                                while($fetchU = mysqli_fetch_assoc($queryU)){
+                                    $nombreUsuario = $fetchU['nombre_usuario'];
+                                    $fechaCreacion = $fetchU['fecha_creacion'];
+                                    $estatusU = $fetchU['usuario_activo'];
+                                    $idUserU = $fetchU['id_usuario'];
 
-                                if($estatusU == "1"){
-                                    $estatusUser = "Activo";
-                                }else{
-                                    $estatusUser = "Baja";
-                                }
+                                    if($estatusU == "1"){
+                                        $estatusUser = "Activo";
+                                    }else{
+                                        $estatusUser = "Baja";
+                                    }
 
-                                echo "<tr>
-                                    <td>$nombreUsuario</td>
-                                    <td>$estatusUser</td>
-                                    <td>$fechaCreacion</td>
-                                    <td>
-                                        <a href='verInfoUsuario.php?dataSet=$idUserU' class='btn waves-effect btnGrenNormal'>Ver</a>
-                                    </td>
-                                </tr>";
-                            }//fion del while
-                        }else{
-                            //sin usuarios asignados
-                        }
-                    ?>
-                    </tbody>
-                </table>
+                                    echo "<tr>
+                                        <td>$nombreUsuario</td>
+                                        <td>$estatusUser</td>
+                                        <td>$fechaCreacion</td>
+                                        <td>
+                                            <a href='verInfoUsuario.php?dataSet=$idUserU' class='btn waves-effect btnGrenNormal'>Ver</a>
+                                        </td>
+                                    </tr>";
+                                }//fion del while
+                            }else{
+                                //sin usuarios asignados
+                            }
+                        ?>
+                        </tbody>
+                    </table>
+                </div>
+                
             </div>
           </div>
         </div>
