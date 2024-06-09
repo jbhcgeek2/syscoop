@@ -74,6 +74,39 @@ if(!empty($_SESSION['usNamePlataform'])){
     }else{
       echo "DataError|No fue posible consultar la base de datos.";
     }
-  }
+  }elseif(!empty($_POST['empleadoUpdate'])){
+    //seccion para actualizar la informacion del empleado
+    $idEmpleadoUpdate = $_POST['empleadoUpdate'];
+    $nombreUpdate = $_POST['nombreUpdate'];
+    $paternoUpdate = $_POST['paternoUpdate'];
+    $maternoUpdate = $_POST['maternoUpdate'];
+    $correoUpdate = $_POST['correoUpdate'];
+    $celularUpdate = $_POST['celularUpdate'];
+    $departamentoUpdate = $_POST['departamentoUpdate'];
+    $activoUpdate = $_POST['activoUpdate'];
+    
+    //verificamos que los campos esten capturados
+    if(!empty($nombreUpdate) || !empty($paternoUpdate) || !empty($maternoUpdate) ||
+      !empty($correoUpdate) || !empty($celularUpdate) || !empty($departamentoUpdate) 
+      || !empty($activoUpdate)){
+      //procedemos a actualizar los datos del usuario
+      $sql = "UPDATE empleados SET nombre = '$nombreUpdate', paterno = '$paternoUpdate',
+      materno = '$maternoUpdate', correo = '$correoUpdate', celular = '$celularUpdate',
+      departamento_id = '$departamentoUpdate', activo = '$activoUpdate' WHERE id_empleado = '$idEmpleadoUpdate"
+      try {
+        $query = mysqli_query($conexion, $sql);
+        //se actualizo el empleado correctamente
+        $res = ['status'=>'ok','mensaje'=>'operationComplete'];
+        echo json_encode($res);
+      } catch (\Throwable $th) {
+        //ocurrio un error
+        $res = ['status'=>'error','mensaje'=>'Ocurrio un error el actualizar el empleado.'];
+        echo json_encode($res);
+      }
+    }else{
+      //campos incompletos
+      $res = ['status'=>'error','mensaje'=>'Verifica que los campos esten correctamente capturados.'];
+      echo json_encode($res);
+    }
 }
 ?>

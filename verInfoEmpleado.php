@@ -100,11 +100,11 @@
                       <option value="" disabled>Seleccione</option>
                       <?php 
                         if($activo == "1"){
-                          echo '<option value="1" selected disabled>Activo</option>
+                          echo '<option value="1" selected>Activo</option>
                           <option value="0">Baja</option>';
                         }else{
                           echo '<option value="1">Activo</option>
-                          <option value="0" selected disabled>Baja</option>';
+                          <option value="0" selected>Baja</option>';
                         }
                       ?>
                       
@@ -123,7 +123,7 @@
                             $nombreDep = $fetchDep['nombre_departamento'];
                             $idDepa = $fetchDep['id_departamento'];
                             if($idDepa == $departamento){
-                              echo "<option value='$idDepa' selected disabled>$nombreDep</option>";
+                              echo "<option value='$idDepa' selected>$nombreDep</option>";
                             }else{
                               echo "<option value='$idDepa'>$nombreDep</option>";
                             }
@@ -149,7 +149,7 @@
                             $nombrePuesto = $fetchcargo['nombre_puesto'];
                             $idPuesto = $fetchcargo['id_puesto'];
                             if($idPuesto == $puesto){
-                              echo "<option value='$idPuesto' selected disabled>$nombrePuesto</option>";
+                              echo "<option value='$idPuesto' selected>$nombrePuesto</option>";
                             }else{
                               echo "<option value='$idPuesto'>$nombrePuesto</option>";
                             }
