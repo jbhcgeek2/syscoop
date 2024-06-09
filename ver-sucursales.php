@@ -114,12 +114,13 @@
   <div id="modalEditSuc" class="modal">
     <div class="modal-content">
       <div class="row">
-        <h4>Registrar Sucursal</h4>
+        <h4>Editar Sucursal</h4>
 
         <div class="input-field col s12 m6">
             <input type="text" class="" id="nameSucEdit">
             <label for="nameSucEdit">Nombre</label>
         </div>
+        <input type="hidden" id="dataSucEdit">
 
         <div class="input-field col s12 m6">
             <select name="estatusSucEdit" id="estatusSucEdit">

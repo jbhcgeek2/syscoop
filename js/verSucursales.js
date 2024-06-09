@@ -7,6 +7,7 @@ function editSuc(sucData){
 
     //ahora mandamos llamar al modal de editar
 
-    var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.init(elems, options);
+    document.getElementById('nameSucEdit').value = nombreSuc;
+    document.getElementById('estatusSucEdit').value = estatusSuc;
+    document.getElementById('dataSucEdit').value = idSuc;
 }
