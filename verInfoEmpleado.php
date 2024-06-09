@@ -26,7 +26,7 @@
           $fetch = mysqli_fetch_assoc($query);
           $imgPerfil = "img/imgPerfilDefaut.jpg";
           $nombreCompleto = mb_strtoupper($fetch['nombre'])." ".mb_strtoupper($fetch['paterno'])." ".mb_strtoupper($fetch['materno']);
-          $usuarioPer = $fetch['nombre_usuario'];
+        //   $usuarioPer = $fetch['nombre_usuario'];
           $correoPer = $fetch['correo'];
           $celular = $fetch['celular'];
           $departamento = $fetch['departamento_id'];
@@ -51,7 +51,7 @@
       <div class="col s12">
 
         <div class="card cardStyleContent">
-          <div class="titulo">Datos de usuario</div>
+          <div class="titulo">Datos del empleado</div>
           <div class="card-content">
             <div class="row">
 
@@ -83,10 +83,7 @@
                     </select>
                     <label for="activo">Estatus</label>
                   </div>
-                  <div class="input-field col s12 m3">
-                    <input type="text" id="usuarioReg" value="<?php echo $usuarioPer; ?>">
-                    <label for="usuarioReg">Usuario</label>
-                  </div>
+                  
                   <div class="input-field col s12 m6">
                     <input type="text" id="mailUser" value="<?php echo $correoPer; ?>">
                     <label for="mailUser">Correo</label>
@@ -144,13 +141,7 @@
                     </select>
                     <label for="puesto">Cargo</label>
                   </div>
-                  <div class="input-field col s12 hide" id="contentCon">
-                    <input type="text" name="contra_usuario" id="contra_usuario" value="<?php echo $fetch['contra_usuario']; ?>" onchange="updateCampo(this.id)">
-                    <label for="pasShow">Contraseña</label>
-                  </div>
-                  <div class="col s12 center">
-                    <a href="#!" class="btn waves waves-effect btnBlueNormal" id="btnShowPass">Ver Contraseña</a>
-                  </div>
+                  
 
                 </div>
 
