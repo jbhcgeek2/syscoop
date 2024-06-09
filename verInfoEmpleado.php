@@ -162,7 +162,7 @@
           <div class="titulo">Usuarios Asignados</div>
           <div class="card-content">
             <div class="row">
-                <table>
+                <table class="striped">
                     <thead>
                         <tr>
                             <th>Nombre</th>
@@ -180,9 +180,11 @@
                             while($fetchU = mysqli_fetch_assoc($queryU)){
                                 $nombreUsuario = $fetchU['nombre_usuario'];
                                 $fechaCreacion = $fetchU['fecha_creacion'];
+                                $estatusU = $fetchU['usuario_activo'];
 
                                 echo "<tr>
                                     <td>$nombreUsuario</td>
+                                    <td>$estatusU</td>
                                     <td>$fechaCreacion</td>
                                     <td>
                                         <a href='' class='btn waves-effect btnGrenNormal'>Ver</a>
