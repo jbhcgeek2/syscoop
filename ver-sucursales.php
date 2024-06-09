@@ -44,9 +44,9 @@
                         $nombreSuc = $fetchSuc['nombre_sucursal'];
                         $idSuc = $fetchSuc['id_sucursal'];
                         if($fetchSuc['sucursal_activa'] == 0){
-                            $classCard = "Activa";
-                        }else{
                             $classCard = "Baja";
+                        }else{
+                            $classCard = "Activa";
                         }
                         $cadena = $idSuc."|".$nombreSuc."|".$classCard;
                         ?>
