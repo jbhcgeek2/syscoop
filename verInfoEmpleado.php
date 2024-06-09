@@ -162,7 +162,7 @@
           <div class="titulo">Usuarios Asignados</div>
           <div class="card-content">
             <div class="row">
-                <div class="col s12 m12 l10 offset-l1">
+                <div class="col s12 m12 l12">
                     <table class="striped">
                         <thead>
                             <tr>
