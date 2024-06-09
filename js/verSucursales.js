@@ -10,4 +10,7 @@ function editSuc(sucData){
     document.getElementById('nameSucEdit').value = nombreSuc;
     document.getElementById('estatusSucEdit').value = estatusSuc;
     document.getElementById('dataSucEdit').value = idSuc;
+
+    var elemSel = document.querySelectorAll('select');
+    var instanceSel = M.FormSelect.init(elemSel, options);
 }

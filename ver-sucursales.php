@@ -134,7 +134,7 @@
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-close waves-effect waves-red btn-flat">Cancelar</a>
-      <a href="#!" class="btn blue waves-effect waves-blue" id="regSuc">Registrar</a>
+      <a href="#!" class="btn blue waves-effect waves-blue" id="sendUpdate">Actualizar</a>
     </div>
   </div>
 
