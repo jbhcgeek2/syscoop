@@ -41,6 +41,7 @@
                             <th>Nombre</th>
                             <th>Correo</th>
                             <th>Cargo</th>
+                            <th>Ver</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -52,6 +53,7 @@
                               $nombreEmpleado = $fetchEmp['paterno']." ".$fetchEmp['materno']." ".$fetchEmp['nombre'];
                               $correoEmpleado = $fetchEmp['correo'];
                               $puesto = $fetchEmp['nombreCargo'];
+                              $idEmpleado = $fetchEmp['id_empleado'];
                               if($puesto == null){
                                 $puesto = "No Definido";
                               }
@@ -60,6 +62,9 @@
                                 <td>$nombreEmpleado</td>
                                 <td>$correoEmpleado</td>
                                 <td>$puesto</td>
+                                <td>
+                                  <a href='verInfoEmpleado.php?dataSet=$idEmpleado' class='btn btnGrenNormal'>Ver</a>
+                                </td>
                               </tr>";
                             }//fin del while
                         ?>
