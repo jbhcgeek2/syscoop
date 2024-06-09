@@ -24,7 +24,7 @@
           $query = mysqli_query($conexion, $sql);
           $fetch = mysqli_fetch_assoc($query);
           $imgPerfil = "img/imgPerfilDefaut.jpg";
-          $imagenU = $fetchU['imgPerfil'];
+          $imagenU = $fetch['imgPerfil'];
           if(empty($imagenU)){
             $imgPerfil = "img/imgPerfilDefaut.jpg";
           }else{
