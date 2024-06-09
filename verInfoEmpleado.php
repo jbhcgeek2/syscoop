@@ -159,13 +159,14 @@
         </div><!--FIN cardStyleContent card principal-->
 
         <div class="card cardStyleContent">
-          <div class="titulo">Usuario Asignados</div>
+          <div class="titulo">Usuarios Asignados</div>
           <div class="card-content">
             <div class="row">
                 <table>
                     <thead>
                         <tr>
                             <th>Nombre</th>
+                            <th>Estatus</th>
                             <th>Fecha Creacion</th>
                             <th>Ver</th>
                         </tr>
@@ -173,9 +174,9 @@
                     <tbody>
                     <?php
                         //consultamos los usuarios que tenga activos
-                        $sqlU = "SELECT * FROM usuarios WHERE empleado_id = '$data' AND activo = '1'";
+                        $sqlU = "SELECT * FROM usuarios WHERE empleado_id = '$idEmpleadoUser'";
                         $queryU = mysqli_query($conexion, $sqlU);
-                        if(mysqli_num_rows($queryU)> 0){
+                        if(mysqli_num_rows($queryU) > 0){
                             while($fetchU = mysqli_fetch_assoc($queryU)){
                                 $nombreUsuario = $fetchU['nombre_usuario'];
                                 $fechaCreacion = $fetchU['fecha_creacion'];
