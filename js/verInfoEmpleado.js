@@ -102,7 +102,7 @@ btnUpdateData.addEventListener('click', function(){
       datos.append("puestoUpdate",puesto);
 
       let envio = new XMLHttpRequest();
-      envio.open("POST","../includes/operations/updateEmpleado.php",false);
+      envio.open("POST","../includes/operations/empUser.php",false);
       envio.send(datos);
 
       if(envio.status == 200){
