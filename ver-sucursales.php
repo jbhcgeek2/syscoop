@@ -22,11 +22,11 @@
       <div class="col s12">
 
         <div class="card cardStyleContent">
-          <div class="titulo">Sucursales</div>
+          <div class="titulo">Listado de Sucursales</div>
           <div class="card-content">
             <div class="row">
 
-              <div class="col s12 m12 l10 offset-l1" style="">
+              <div class="col s12 m12 l10 offset-l1">
                 <table>
                   <thead>
                     <tr>
