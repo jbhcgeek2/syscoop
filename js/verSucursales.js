@@ -20,4 +20,6 @@ function editSuc(sucData){
 
     var elemSel = document.querySelectorAll('select');
     var instanceSel = M.FormSelect.init(elemSel, options);
+
+    M.updateTextFields();
 }
