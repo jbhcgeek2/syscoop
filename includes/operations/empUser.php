@@ -92,7 +92,7 @@ if(!empty($_SESSION['usNamePlataform'])){
       //procedemos a actualizar los datos del usuario
       $sql = "UPDATE empleados SET nombre = '$nombreUpdate', paterno = '$paternoUpdate',
       materno = '$maternoUpdate', correo = '$correoUpdate', celular = '$celularUpdate',
-      departamento_id = '$departamentoUpdate', activo = '$activoUpdate' WHERE id_empleado = '$idEmpleadoUpdate";
+      departamento_id = '$departamentoUpdate', activo = '$activoUpdate' WHERE id_empleado = '$idEmpleadoUpdate'";
       try {
         $query = mysqli_query($conexion, $sql);
         //se actualizo el empleado correctamente
