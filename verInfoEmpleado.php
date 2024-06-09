@@ -159,42 +159,41 @@
         </div><!--FIN cardStyleContent card principal-->
 
         <div class="card cardStyleContent">
-          <div class="titulo">Permisos de usuario</div>
+          <div class="titulo">Usuario Asignados</div>
           <div class="card-content">
-            <input type="hidden" name="permisoData" id="permisoData" value="<?php echo $fetch['id_permiso']; ?>">
             <div class="row">
-              <?php
-                //consultamos la tabla de permisos para ver cuales se encuentran activos
-                //si tiene permisos para modificar usuarios, mostramos las casillas habilitadas
-                //si no, solo mostramos las casillas pero deshabilitadas 
-                $permisos = ["ver_inventario","agregar_inventario",
-                "editar_inventario","ver_controles","ver_proveedores","agregar_proveedores",
-                "editar_proveedores","actualizar_foto","ver_movimiento","ver_depreciacion",
-                "auditar_inventario","ver_manuales","agregar_manuales","ver_actas","agregar_acas"];
-                $nombrePermiso = ["Ver Inventario","Agregar Inventario","Editar Inventario",
-                "Ver Controles","Ver Proveedores","Agregar Proveedores","Editar Proveedores",
-                "Actualizar Fotos Socios","Ver Movimientos","Ver Depreciacion","Auditar Inventario",
-                "Ver Manuales","Agregar Manuales","Ver Actas","Agregar Actas"];
-                
-                for ($i=0; $i < count($permisos); $i++) { 
-                  $nombreLabel = $nombrePermiso[$i];
-                  $permisoName = $permisos[$i];
-                  //$campoDB = $fetch[$permiso[]];
-                  
-                  if($fetch[$permisoName] == "1"){
-                    $check = "checked='checked'";
-                  }else{
-                    $check = "";
-                  }
-                  echo "<p class='col s12 m4'>
-                    <label>
-                      <input type='checkbox' id='".$permisos[$i]."' $check onclick='updatePermiso(this.id)'>
-                      <span>$nombreLabel</span>
-                    </label>
-                  </p>";
-                  //echo $permisos[$i];
-                }//fin del for
-              ?>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Fecha Creacion</th>
+                            <th>Ver</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                        //consultamos los usuarios que tenga activos
+                        $sqlU = "SELECT * FROM usuarios WHERE empleado_id = '$data' AND activo = '1'";
+                        $queryU = mysqli_query($conexion, $sqlU);
+                        if(mysqli_num_rows($queryU)> 0){
+                            while($fetchU = mysqli_fetch_assoc($queryU)){
+                                $nombreUsuario = $fetchU['nombre_usuario'];
+                                $fechaCreacion = $fetchU['fecha_creacion'];
+
+                                echo "<tr>
+                                    <td>$nombreUsuario</td>
+                                    <td>$fechaCreacion</td>
+                                    <td>
+                                        <a href='' class='btn waves-effect btnGrenNormal'>Ver</a>
+                                    </td>
+                                </tr>";
+                            }//fion del while
+                        }else{
+                            //sin usuarios asignados
+                        }
+                    ?>
+                    </tbody>
+                </table>
             </div>
           </div>
         </div>
