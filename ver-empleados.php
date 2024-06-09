@@ -52,6 +52,9 @@
                               $nombreEmpleado = $fetchEmp['paterno']." ".$fetchEmp['materno']." ".$fetchEmp['nombre'];
                               $correoEmpleado = $fetchEmp['correo'];
                               $puesto = $fetchEmp['nombreCargo'];
+                              if($puesto == null){
+                                $puesto = "No Definido";
+                              }
 
                               echo "<tr>
                                 <td>$nombreEmpleado</td>
