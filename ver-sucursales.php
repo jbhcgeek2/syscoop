@@ -56,7 +56,7 @@
                           <td><?php echo $classCard; ?></td>
                           <td>
                             <a href='#!' class="btn waves waves-effect btnGrenNormal"
-                            id="editSuc|<?php echo $cadena; ?>" onclick="editSuc(this.id)">Editar</a>
+                            id="editSuc|<?php echo $cadena; ?>" onClick="editSuc(this.id)">Editar</a>
                           </td>
                         </tr>
                         <?php
