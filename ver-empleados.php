@@ -51,11 +51,12 @@
                             while($fetchEmp = mysqli_fetch_assoc($queryEmp)){
                               $nombreEmpleado = $fetchEmp['paterno']." ".$fetchEmp['materno']." ".$fetchEmp['nombre'];
                               $correoEmpleado = $fetchEmp['correo'];
+                              $puesto = $fetchEmp['nombreCargo'];
 
                               echo "<tr>
                                 <td>$nombreEmpleado</td>
                                 <td>$correoEmpleado</td>
-                                <td></td>
+                                <td>$puesto</td>
                               </tr>";
                             }//fin del while
                         ?>
