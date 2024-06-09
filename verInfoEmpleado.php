@@ -19,8 +19,7 @@
         // ON a.empleado_id = b.id_empleado INNER JOIN permisos c ON
         // a.permisos_id = c.id_permiso WHERE a.id_usuario = '$data'";
         
-        $sql = "SELECT * FROM empleados a INNER JOIN puestos b 
-        ON a.cargo_id = b.id_puesto WHERE a.id_empleado = '$data'";
+        $sql = "SELECT * FROM empleados a  WHERE a.id_empleado = '$data'";
         try {
           $query = mysqli_query($conexion, $sql);
           $fetch = mysqli_fetch_assoc($query);
