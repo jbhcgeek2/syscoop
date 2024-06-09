@@ -118,7 +118,7 @@
 
         <div class="input-field col s12 m6">
             <input type="text" class="" id="nameSucEdit">
-            <label for="nameSucEdit">Nombre</label>
+            <label for="nameSucEdit" class="active">Nombre</label>
         </div>
         <input type="hidden" id="dataSucEdit">
 
