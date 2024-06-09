@@ -1,4 +1,4 @@
 function editSuc(sucData){
-    console.log(sucdata);
-    
+    console.log(sucData);
+
 }
