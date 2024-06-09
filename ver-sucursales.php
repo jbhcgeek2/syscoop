@@ -55,7 +55,7 @@
                           <td><?php echo $nombreSuc; ?></td>
                           <td><?php echo $classCard; ?></td>
                           <td>
-                            <a href='#!' class="btn waves waves-effect btnGrenNormal"
+                            <a href='#modalEditSuc' class="btn waves waves-effect btnGrenNormal modal-trigger"
                             id="editSuc|<?php echo $cadena; ?>" onClick="editSuc(this.id)">Editar</a>
                           </td>
                         </tr>
@@ -102,6 +102,32 @@
                 <option value="0">Inactiva</option>
             </select>
             <label for="sucActiva">Estatus</label>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-red btn-flat">Cancelar</a>
+      <a href="#!" class="btn blue waves-effect waves-blue" id="regSuc">Registrar</a>
+    </div>
+  </div>
+
+  <div id="modalEditSuc" class="modal">
+    <div class="modal-content">
+      <div class="row">
+        <h4>Registrar Sucursal</h4>
+
+        <div class="input-field col s12 m6">
+            <input type="text" class="" id="nameSucEdit">
+            <label for="nameSucEdit">Nombre</label>
+        </div>
+
+        <div class="input-field col s12 m6">
+            <select name="estatusSucEdit" id="estatusSucEdit">
+                <option value="">Seleccione</option>
+                <option value="1">Activa</option>
+                <option value="0">Inactiva</option>
+            </select>
+            <label for="estatusSucEdit">Estatus</label>
         </div>
       </div>
     </div>
