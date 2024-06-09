@@ -76,7 +76,7 @@ btnUpdateData.addEventListener('click', function(){
     icon: 'warning',
     showDenyButton: 'Cancelar',
     confirmButtonText: 'Si, Actualizar',
-    denyButtonText: `No, Cancelar`
+    denyButtonText: 'No, Cancelar'
   }).then((result)=>{
     if(result.isConfirmed){
       //validamos los datos
