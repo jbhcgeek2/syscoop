@@ -45,7 +45,8 @@
                     </thead>
                     <tbody>
                         <?php 
-                            $sqlEmp = "SELECT * FROM empleados ORDER BY paterno ASC";
+                            $sqlEmp = "SELECT *,(SELECT b.nombre_puesto FROM puestos b WHERE a.cargo_id = b.id_puesto) 
+                            AS nombreCargo FROM empleados a WHERE a.id_empleado > 1 ORDER BY a.paterno ASC";
                             $queryEmp = mysqli_query($conexion,$sqlEmp)or die("Error al consultar los empleados");
                             while($fetchEmp = mysqli_fetch_assoc($queryEmp)){
                               $nombreEmpleado = $fetchEmp['paterno']." ".$fetchEmp['materno']." ".$fetchEmp['nombre'];
